@@ -1,0 +1,97 @@
+Início
+
+Definir classe Funcionario:
+    Inicializar(id, nome, idade, cargo, setor):
+        Definir ID do funcionário
+        Definir nome do funcionário
+        Definir idade do funcionário
+        Definir cargo do funcionário
+        Definir setor do funcionário
+        Inicializar lista de compromissos vazia
+
+    Método getId():
+        Retornar ID do funcionário
+
+    Método setId(id):
+        Definir ID do funcionário
+
+    Método getNome():
+        Retornar nome do funcionário
+
+    Método setNome(nome):
+        Definir nome do funcionário
+
+    Método getIdade():
+        Retornar idade do funcionário
+
+    Método setIdade(idade):
+        Definir idade do funcionário
+
+    Método getCargo():
+        Retornar cargo do funcionário
+
+    Método setCargo(cargo):
+        Definir cargo do funcionário
+
+    Método getSetor():
+        Retornar setor do funcionário
+
+    Método setSetor(setor):
+        Definir setor do funcionário
+
+    Método salvar_compromisso(tarefa):
+        Adicionar tarefa à lista de compromissos
+
+    Método mostra_agenda():
+        Se a lista de compromissos estiver vazia:
+            Exibir "Sem compromissos na agenda."
+        Caso contrário:
+            Exibir "Eventos na agenda:"
+            Para cada compromisso na lista de compromissos:
+                Exibir compromisso
+
+    Método __calcular_idade():
+        Obter o ano atual
+        Retornar a diferença entre o ano atual e a idade do funcionário
+
+    Método __str__():
+        Retornar uma string formatada com ID, nome, idade (calculada internamente), cargo e setor
+
+    Método salvar_objeto(db_name):
+        Abrir o banco de dados usando shelve com o nome db_name
+        Salvar o objeto Funcionario no banco de dados usando o ID como chave
+
+    Método estático carregar_objeto(db_name, id):
+        Abrir o banco de dados usando shelve com o nome db_name
+        Retornar o objeto associado ao ID fornecido
+
+Função adicionar_funcionario(id, nome, idade, cargo, setor, db_name):
+    Criar um novo objeto Funcionario com os dados fornecidos
+    Salvar o objeto no banco de dados usando o método salvar_objeto
+    Exibir uma mensagem de sucesso
+
+Se o script estiver sendo executado diretamente:
+    Definir o nome do banco de dados como 'funcionarios.db'
+    
+    Enquanto o usuário desejar adicionar funcionários:
+        Solicitar ID, nome, idade, cargo e setor do funcionário
+        Chamar adicionar_funcionario com os dados fornecidos
+        Perguntar se o usuário deseja adicionar outro funcionário
+        Se a resposta não for 's':
+            Encerrar o loop
+
+Fim
+
+
+Explicação
+
+    Classe Funcionario:
+        Define atributos e métodos para manipulação de funcionários.
+        Inclui métodos para definir e obter valores de atributos, salvar e carregar dados.
+
+    Função adicionar_funcionario:
+        Cria um novo objeto Funcionario e o salva no banco de dados.
+
+    Bloco Interativo:
+        Solicita ao usuário os dados do funcionário e adiciona o funcionário ao banco de dados.
+        Permite adicionar múltiplos funcionários até que o usuário decida parar.
